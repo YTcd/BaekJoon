@@ -1,6 +1,9 @@
+// copy this
+// "../input.txt"
+// "/dev/stdin"
 {
     let fs = require('fs');
-    let input = fs.readFileSync('/dev/stdin').toString().split(' ');
+    let input = fs.readFileSync('../input.txt').toString().split(' ');
 
     let num = Number(input);
 
@@ -10,7 +13,7 @@
 }
 {
     let fs = require('fs');
-    let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+    let input = fs.readFileSync('../input.txt').toString().split('\n');
 
     let count = input[0];
     let numbers = [];
