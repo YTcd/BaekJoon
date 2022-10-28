@@ -1,6 +1,6 @@
 // copy this
-// "../input.txt"
-// "/dev/stdin"
+"../input.txt"
+"/dev/stdin"
 {
 let fs = require('fs');
 let input = fs.readFileSync("/dev/stdin").toString().split(" ");
