@@ -1,0 +1,15 @@
+/Users/t8g-2303-pc-012/yt/BaekJoon/obj/Debug/net7.0/BaekJoon.csproj.AssemblyReference.cache
+/Users/t8g-2303-pc-012/yt/BaekJoon/obj/Debug/net7.0/BaekJoon.GeneratedMSBuildEditorConfig.editorconfig
+/Users/t8g-2303-pc-012/yt/BaekJoon/obj/Debug/net7.0/BaekJoon.AssemblyInfoInputs.cache
+/Users/t8g-2303-pc-012/yt/BaekJoon/obj/Debug/net7.0/BaekJoon.AssemblyInfo.cs
+/Users/t8g-2303-pc-012/yt/BaekJoon/obj/Debug/net7.0/BaekJoon.csproj.CoreCompileInputs.cache
+/Users/t8g-2303-pc-012/yt/BaekJoon/bin/Debug/net7.0/BaekJoon
+/Users/t8g-2303-pc-012/yt/BaekJoon/bin/Debug/net7.0/BaekJoon.deps.json
+/Users/t8g-2303-pc-012/yt/BaekJoon/bin/Debug/net7.0/BaekJoon.runtimeconfig.json
+/Users/t8g-2303-pc-012/yt/BaekJoon/bin/Debug/net7.0/BaekJoon.dll
+/Users/t8g-2303-pc-012/yt/BaekJoon/bin/Debug/net7.0/BaekJoon.pdb
+/Users/t8g-2303-pc-012/yt/BaekJoon/obj/Debug/net7.0/BaekJoon.dll
+/Users/t8g-2303-pc-012/yt/BaekJoon/obj/Debug/net7.0/refint/BaekJoon.dll
+/Users/t8g-2303-pc-012/yt/BaekJoon/obj/Debug/net7.0/BaekJoon.pdb
+/Users/t8g-2303-pc-012/yt/BaekJoon/obj/Debug/net7.0/BaekJoon.genruntimeconfig.cache
+/Users/t8g-2303-pc-012/yt/BaekJoon/obj/Debug/net7.0/ref/BaekJoon.dll
