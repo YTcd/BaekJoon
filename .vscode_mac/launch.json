@@ -19,8 +19,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "C:/Users/master/workspace/BaekJoon",
-      "program": "C:/Users/master/workspace/BaekJoon/build/Debug/outDebug"
+      "cwd": "/Users/t8g-2303-pc-012/yt/BaekJoon",
+      "program": "/Users/t8g-2303-pc-012/yt/BaekJoon/build/Debug/outDebug"
     }
   ]
 }

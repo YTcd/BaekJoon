@@ -4,7 +4,7 @@
         {
             "type": "cppbuild",
             "label": "Build active C++ file",
-            "command": "C:/Program Files/LLVM/bin/clang.exe",
+            "command": "/usr/bin/clang++",
             "args": [
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
