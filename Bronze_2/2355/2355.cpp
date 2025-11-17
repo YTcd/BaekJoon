@@ -3,7 +3,7 @@ using namespace std;
  
 int main()
 {
-    int A, B;
+    long A, B;
     cin >> A >> B;
 
     long sum = 0;
@@ -19,8 +19,8 @@ int main()
         return 0;
     }
     
-    sum = (A + B) * (B - A + 1) / 2;
+    sum = (A + B) * (B - A + 1);
 
-    cout << sum << endl;
+    cout << sum / 2<< endl;
     return 0;
 }
