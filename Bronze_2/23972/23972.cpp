@@ -3,7 +3,7 @@ using namespace std;
  
 int main()
 {
-    int K, N;
+    long K, N;
     cin >> K >> N;
 
     if (N == 1)
@@ -12,9 +12,9 @@ int main()
         return 0;
     }
 
-    int returnAmount = K * N; 
+    long returnAmount = K * N; 
 
-    int result = K * N / (N - 1);
+    long result = K * N / (N - 1);
     result = (K * N % (N - 1)) > 0 ? result + 1 : result;
     cout << result << endl;
     return 0;
