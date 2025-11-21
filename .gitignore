@@ -3,11 +3,19 @@
 # Prerequisites
 *.d
 
+# test code
+test.cpp
+test
+test.yml
+test.dSYM/
+
 # Compiled Object files
 *.slo
 *.lo
 *.o
 *.obj
+*.yml
+*.dSYM
 
 # Precompiled Headers
 *.gch
