@@ -11,6 +11,8 @@ test.dSYM/
 
 # Compiled Object files
 *.slo
+*.ilk
+*.pdb
 *.lo
 *.o
 *.obj
