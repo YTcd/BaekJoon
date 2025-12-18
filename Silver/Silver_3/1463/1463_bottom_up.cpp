@@ -12,36 +12,24 @@ int main()
     int Num;
     cin >> Num;
 
-    vector<int> vec(Num + 1, -1);
+    int INFI = 1e9;
+    vector<int> vec(Num + 1, INFI);
     vec[0] = 0;
     vec[1] = 0;
-    vec[2] = 1;
-    vec[3] = 1;
 
-    for (int i = 3; i <= Num; i++)
+    for (int i = 1; i <= Num; i++)
     {
-        if (i * 3 <= Num)
+
+        vec[i] = min(vec[i - 1] + 1, vec[i]);
+
+        if (i % 3 == 0)
         {
-            if (vec[i * 3] == -1)
-                vec[i * 3] = vec[i] + 1;
-            else
-                vec[i * 3] = min(vec[i * 3], vec[i] + 1);
+            vec[i] = min(vec[i / 3] + 1, vec[i]);
         }
 
-        if (i * 2 <= Num)
+        if (i % 2 == 0)
         {
-            if (vec[i * 2] == -1)
-                vec[i * 2] = vec[i] + 1;
-            else
-                vec[i * 2] = min(vec[i * 2], vec[i] + 1);
-        }
-
-        if (i + 1 <= Num)
-        {
-            if (vec[i + 1] == -1)
-                vec[i + 1] = vec[i] + 1;
-            else
-                vec[i + 1] = min(vec[i + 1], vec[i] + 1);
+            vec[i] = min(vec[i / 2] + 1, vec[i]);
         }
     }
 
