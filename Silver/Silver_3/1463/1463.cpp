@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int DFS(int Num, vector<int> &vec, int &count);
+int DFS(int Num, vector<int> &vec);
 
 int main()
 {
@@ -14,20 +14,21 @@ int main()
     int Num;
     cin >> Num;
 
-    vector<int> vec(1000000, -1);
+    vector<int> vec(1000001, -1);
     vec[0] = 0;
-    vec[1] = 1;
+    vec[1] = 0;
     vec[2] = 1;
+    vec[3] = 1;
 
     int count = 0;
 
-    DFS(Num, vec, count);
+    count = DFS(Num, vec);
     cout << count;
 
     return 0;
 }
 
-int DFS(int Num, vector<int> &vec, int &count)
+int DFS(int Num, vector<int> &vec)
 {
     if (Num == 1)
     {
@@ -35,22 +36,21 @@ int DFS(int Num, vector<int> &vec, int &count)
     }
     else if (Num == 2 || Num == 3)
     {
-        count++;
         return 1;
     }
 
-    count++;
-    if (Num % 3 == 0)
-    {
-        return vec[Num - 1] != -1 ? vec[Num - 1] : DFS(Num / 3, vec, count);
-    }
-    if (Num % 2 == 0)
-    {
-        return vec[Num - 1] != -1 ? vec[Num - 1] : DFS(Num / 2, vec, count);
-    }
+    if (vec[Num] != -1)
+        return vec[Num];
 
-    if (Num % 3 != 1 && Num % 2 != 0)
-    {
-        return DFS(Num - 1, vec, count);
-    }
+    int minVal = DFS(Num - 1, vec) + 1;
+
+    if (Num % 2 == 0)
+        minVal = min(minVal, DFS(Num / 2, vec) + 1);
+
+    if (Num % 3 == 0)
+        minVal = min(minVal, DFS(Num / 3, vec) + 1);
+
+    vec[Num] = minVal;
+
+    return vec[Num];
 }
