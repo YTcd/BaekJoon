@@ -12,40 +12,26 @@ int main()
     int level;
     cin >> level;
 
-    int count = (level + 1) * level / 2;
-
-    vector<int> vec;
-    vector<int> memo;
-
-    memo.push_back(0);
-    int plus = 2;
-    for (int i = 1; i < level; i++)
+    vector<vector<int>> vec(level);
+    for (int i = 0; i < level; i++)
     {
-        memo.push_back(memo[i - 1] + plus);
-        plus++;
-    }
-
-    for (int i = 0; i < count; i++)
-    {
-        int number;
-        cin >> number;
-        vec.push_back(number);
-    }
-
-    int currentLevel = memo.size() - 1;
-
-    for (int i = count - level - 1; i >= 0; i--)
-    {
-        if (i == memo[currentLevel])
+        for (int j = 0; j < i + 1; j++)
         {
-            currentLevel--;
+            int temp;
+            cin >> temp;
+            vec[i].push_back(temp);
         }
-
-        int num = vec[i];
-        vec[i] = num + max(vec[i + currentLevel], vec[i + currentLevel + 1]);
     }
 
-    cout << vec[0];
+    for (int i = level - 2; i >= 0; i--)
+    {
+        for (int j = 0; j < i + 1; j++)
+        {
+            vec[i][j] = vec[i][j] + max(vec[i + 1][j], vec[i + 1][j + 1]);
+        }
+    }
+
+    cout << vec[0][0];
 
     return 0;
 }
