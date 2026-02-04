@@ -1,6 +1,6 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
 
@@ -21,11 +21,13 @@ int main()
         times.push_back({start, end});
     }
 
-    sort(times.begin(), times.end(), [](auto &a, auto &b)
+    sort(times.begin(), times.end(),
+         [](const auto& a, const auto& b)
          {
-        if (a.second == b.second)
-            return a.first < b.first;
-        return a.second < b.second; });
+             if (a.second == b.second)
+                 return a.first < b.first;
+             return a.second < b.second;
+         });
 
     int count = 0;
     int lastEnd = 0;

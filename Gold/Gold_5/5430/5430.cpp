@@ -1,12 +1,11 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <string>
 #include <deque>
+#include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-void MakeResult(const deque<int> &arr, vector<string> &result, bool isRev);
+void MakeResult(const deque<int>& arr, vector<string>& result, bool isRev);
 
 int main()
 {
@@ -92,7 +91,7 @@ int main()
     return 0;
 }
 
-void MakeResult(const deque<int> &arr, vector<string> &result, bool isRev)
+void MakeResult(const deque<int>& arr, vector<string>& result, bool isRev)
 {
     int size = arr.size();
     string str;
@@ -105,7 +104,9 @@ void MakeResult(const deque<int> &arr, vector<string> &result, bool isRev)
             int num = arr[i];
             str += to_string(num);
             if (i != size - 1)
+            {
                 str += ",";
+            }
         }
     }
     else

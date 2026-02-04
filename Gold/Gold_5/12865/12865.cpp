@@ -1,6 +1,6 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
 
@@ -15,14 +15,14 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int N, K; // N : 갯수, K : 최대 무게
+    int N, K;  // N : 갯수, K : 최대 무게
     cin >> N >> K;
 
     vector<wv> vec;
 
     for (int i = 0; i < N; i++)
     {
-        int W, V; // W : 각 무게, V : 가치;
+        int W, V;  // W : 각 무게, V : 가치;
         cin >> W >> V;
         vec.push_back({W, V});
     }

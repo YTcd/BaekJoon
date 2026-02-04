@@ -1,7 +1,7 @@
-#include <iostream>
-#include <vector>
 #include <algorithm>
+#include <iostream>
 #include <queue>
+#include <vector>
 
 using namespace std;
 
@@ -12,14 +12,14 @@ int main()
 
     int N, K;
     cin >> N >> K;
-    
+
     vector<int> memo(100001, 100000);
     queue<int> que;
 
     memo[N] = 0;
     int num;
     que.push(N);
-    while(que.empty() == false)
+    while (que.empty() == false)
     {
         num = que.front();
         que.pop();

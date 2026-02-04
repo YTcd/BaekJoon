@@ -1,11 +1,12 @@
-#include <iostream>
-#include <vector>
 #include <algorithm>
+#include <iostream>
 #include <queue>
+#include <vector>
 
 using namespace std;
 
-struct cell {
+struct cell
+{
     int x;
     int y;
     int val;
@@ -49,7 +50,7 @@ int main()
     }
 
     int count = 0;
-    while(true)
+    while (true)
     {
         int size = cells.size();
         for (int i = 0; i < size; i++)
@@ -62,28 +63,28 @@ int main()
 
             if (x > -1 && x < row && y > -1 && y < col)
             {
-                if (x+1 < row && vec[x+1][y] == 0)
+                if (x + 1 < row && vec[x + 1][y] == 0)
                 {
-                    vec[x+1][y] = 1;
-                    cells.push({x+1, y, 1});
+                    vec[x + 1][y] = 1;
+                    cells.push({x + 1, y, 1});
                 }
 
-                if (x-1 > -1 && vec[x-1][y] == 0)
+                if (x - 1 > -1 && vec[x - 1][y] == 0)
                 {
-                    vec[x-1][y] = 1;
-                    cells.push({x-1, y, 1});
+                    vec[x - 1][y] = 1;
+                    cells.push({x - 1, y, 1});
                 }
 
-                if (y+1 < col && vec[x][y+1] == 0)
+                if (y + 1 < col && vec[x][y + 1] == 0)
                 {
-                    vec[x][y+1] = 1;
-                    cells.push({x, y+1, 1});
+                    vec[x][y + 1] = 1;
+                    cells.push({x, y + 1, 1});
                 }
 
-                if (y-1 > -1 && vec[x][y-1] == 0)
+                if (y - 1 > -1 && vec[x][y - 1] == 0)
                 {
-                    vec[x][y-1] = 1;
-                    cells.push({x, y-1, 1});
+                    vec[x][y - 1] = 1;
+                    cells.push({x, y - 1, 1});
                 }
             }
         }

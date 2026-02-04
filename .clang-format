@@ -1,0 +1,14 @@
+BasedOnStyle: Google
+IndentWidth: 4
+ColumnLimit: 100
+
+# 람다 관련
+AllowShortLambdasOnASingleLine: None
+LambdaBodyIndentation: Signature
+
+# if / for / while 한 줄 금지
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+
+# 중괄호 스타일
+BreakBeforeBraces: Allman
