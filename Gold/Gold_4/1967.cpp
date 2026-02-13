@@ -1,68 +1,66 @@
+#include <algorithm>
 #include <iostream>
-#include <vector>
 #include <string>
+#include <vector>
 
 using namespace std;
 
-struct nodeInfo{
-    vector<int> target;
-    vector<int> weight;
+int ans = 0;
+
+struct NodeInfo
+{
+    vector<pair<int, int>> childs;
 };
 
-void DFS(int index, vector<int>& vec, vector<nodeInfo> &nodeInfo) {
-    int size = nodeInfo[index].target.size();
+int DFS(int index, vector<NodeInfo>& nodes)
+{
+    int size = nodes[index].childs.size();
+    if (size == 0)
+    {
+        return 0;
+    }
+
+    int MAX1 = 0;
+    int MAX2 = 0;
     for (int i = 0; i < size; i++)
     {
-        int targetIndex = nodeInfo[index].target[i];
-        int weight = nodeInfo[index].weight[i];
+        int nextIndex = nodes[index].childs[i].first;
+        int nextNodeWeight = nodes[index].childs[i].second;
 
-        if (weight + vec[index] < vec[targetIndex])
+        int calcNum = DFS(nextIndex, nodes) + nextNodeWeight;
+        if (calcNum >= MAX1)
         {
-            vec[targetIndex] = weight + vec[index];
-            DFS(targetIndex, vec, nodeInfo);
+            MAX2 = MAX1;
+            MAX1 = calcNum;
+        }
+        else if (calcNum > MAX2)
+        {
+            MAX2 = calcNum;
         }
     }
 
-};
+    ans = max(ans, MAX1 + MAX2);
+
+    return MAX1;
+}
 
 int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int nodeCnt, edgeCnt;
-    cin >> nodeCnt >> edgeCnt;
+    int nodeCnt;
+    cin >> nodeCnt;
 
-    int startIndex;
-    cin >> startIndex;
-
-    vector<int> vec(nodeCnt+1, 11);
-
-    vec[startIndex] = 0;
-
-    vector<nodeInfo> nodeInfo(nodeCnt+1, {vector<int>(), vector<int>()});
-    for (int i = 0; i < edgeCnt; i++)
+    vector<NodeInfo> nodes(nodeCnt + 1);
+    int parentIndex, childIndex, weight;
+    while (cin >> parentIndex >> childIndex >> weight)
     {
-        int start, target, weight;
-        cin >> start >> target >> weight;
-        nodeInfo[start].target.push_back(target);
-        nodeInfo[start].weight.push_back(weight);
+        nodes[parentIndex].childs.push_back({childIndex, weight});
     }
 
-    DFS(startIndex, vec, nodeInfo);
-
-    for (int i = 1; i <= nodeCnt; i++)
-    {
-        int cnt = vec[i];
-        if (cnt == 11)
-        {
-            cout << "INF" << '\n';
-        }
-        else
-        {
-            cout << cnt << '\n';
-        }
-    }
+    DFS(1, nodes);
+    cout << ans;
 
     return 0;
 }
