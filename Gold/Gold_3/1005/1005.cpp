@@ -5,7 +5,7 @@
 using namespace std;
 
 vector<int> durations;
-vector<pair<int,int>> rules;
+vector<vector<int>> prereq;
 vector<int> memo;
 
 int DFS(int destination)
@@ -16,13 +16,9 @@ int DFS(int destination)
     }
 
     int MAX = 0;
-    for (int i = 0; i < rules.size(); i++)
+    for (int i = 0; i < prereq[destination].size(); i++)
     {
-        if (rules[i].first - 1 == destination)
-        {
-            int startPos = rules[i].second;
-            MAX = max(DFS(startPos-1), MAX);
-        }
+        MAX = max(DFS(prereq[destination][i]), MAX);
     }
     memo[destination] = MAX + durations[destination];
     return memo[destination];
@@ -39,10 +35,10 @@ int main()
     for (int i = 0; i < countOfTestCase; i++)
     {
         durations.clear();
-        rules.clear();
         int countOfBuilding, countOfRules;
         cin >> countOfBuilding >> countOfRules;
         memo.assign(countOfBuilding, -1);
+        prereq.assign(countOfBuilding, vector<int>());
 
         for (int j = 0; j < countOfBuilding; j++)
         {
@@ -55,7 +51,7 @@ int main()
         {
             int ruleF, ruleB;
             cin >> ruleF >> ruleB;
-            rules.push_back(pair<int,int>(ruleB, ruleF));
+            prereq[ruleB - 1].push_back(ruleF - 1);
         }
 
         int destination;
